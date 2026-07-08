@@ -1,5 +1,6 @@
 import { Timer, Play } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
 
 type ExamCardActiveProps = {
   title: string
@@ -23,12 +24,10 @@ export default function ExamCardActive({
       </div>
 
       <div className="flex justify-between items-start mb-4">
-        <div className="px-2.5 py-1 rounded bg-green-900/30 border border-green-800 flex items-center gap-1.5">
-          <span className="size-2 rounded-full bg-green-400 animate-pulse" />
-          <span className="text-[10px] font-bold text-green-400 uppercase tracking-wider">
-            LIVE
-          </span>
-        </div>
+        <Badge variant="success" className="uppercase tracking-wider font-bold text-[10px] flex items-center gap-1.5">
+          <span className="size-2 rounded-full bg-current animate-pulse" />
+          LIVE
+        </Badge>
         <span className="text-sm font-mono font-medium text-primary">
           {timeRemaining}
         </span>

@@ -1,5 +1,6 @@
 import { AlertTriangle } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
 
 type ExamCardFlaggedProps = {
   title: string
@@ -23,11 +24,9 @@ export default function ExamCardFlagged({
   return (
     <div className="bg-surface-container-low p-6 rounded-xl border border-outline-variant flex flex-col h-full opacity-90">
       <div className="flex justify-between items-start mb-4">
-        <div className="px-2.5 py-1 rounded bg-error-container/30 border border-error">
-          <span className="text-[10px] font-bold text-error uppercase tracking-wider">
-            FLAGGED
-          </span>
-        </div>
+        <Badge variant="warning" className="uppercase tracking-wider font-bold text-[10px]">
+          FLAGGED
+        </Badge>
         <span className="text-[11px] font-mono font-medium text-outline">
           {dateLabel}
         </span>

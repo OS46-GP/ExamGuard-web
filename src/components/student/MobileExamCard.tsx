@@ -10,11 +10,11 @@ type MobileExamCardProps = {
 
 const badgeStyles: Record<string, string> = {
   accent:
-    "bg-secondary-container/30 border-secondary-container text-on-secondary-container",
+    "bg-secondary-container/60 border-secondary-container text-on-secondary-container",
   default:
-    "bg-outline-variant/30 border-outline-variant text-on-surface-variant",
+    "bg-outline-variant/60 border-outline-variant text-on-surface-variant",
   warning:
-    "bg-error-container/20 border-error text-on-error-container",
+    "bg-error-container/40 border-error text-on-error-container",
 }
 
 export default function MobileExamCard({

@@ -1,5 +1,6 @@
 import { Calendar, Info, Lock } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
 
 type ExamCardScheduledProps = {
   title: string
@@ -29,11 +30,9 @@ export default function ExamCardScheduled({
   return (
     <div className="bg-surface-container-low p-6 rounded-xl border border-outline-variant flex flex-col h-full hover:border-outline transition-colors">
       <div className="flex justify-between items-start mb-4">
-        <div className="px-2.5 py-1 rounded bg-surface-container-high border border-outline-variant">
-          <span className="text-[10px] font-bold text-outline-variant uppercase tracking-wider">
-            SCHEDULED
-          </span>
-        </div>
+        <Badge variant="outline" className="uppercase tracking-wider font-bold text-[10px]">
+          SCHEDULED
+        </Badge>
         <div className="flex items-center gap-1 text-outline">
           <Calendar size={16} />
           <span className="text-[11px] font-mono font-medium">{dateLabel}</span>

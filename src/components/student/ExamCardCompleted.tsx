@@ -1,5 +1,6 @@
 import { ShieldCheck } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
 
 type ExamCardCompletedProps = {
   title: string
@@ -23,11 +24,9 @@ export default function ExamCardCompleted({
   return (
     <div className="bg-surface-container-low p-6 rounded-xl border border-outline-variant flex flex-col h-full">
       <div className="flex justify-between items-start mb-4">
-        <div className="px-2.5 py-1 rounded bg-green-900/30 border border-green-800">
-          <span className="text-[10px] font-bold text-green-400 uppercase tracking-wider">
-            PASSED
-          </span>
-        </div>
+        <Badge variant="success" className="uppercase tracking-wider font-bold text-[10px]">
+          PASSED
+        </Badge>
         <span className="text-[11px] font-mono font-medium text-outline">
           {dateLabel}
         </span>

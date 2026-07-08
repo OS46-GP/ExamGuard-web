@@ -15,6 +15,7 @@ import Register from "@/pages/auth/Register";
 
 import Dashboard from "@/pages/dashboard/Dashboard";
 import Exams from "@/pages/dashboard/Exams";
+import Results from "@/pages/dashboard/Results";
 
 import NotFound from "@/pages/NotFound";
 
@@ -41,7 +42,7 @@ const AppRouter = () => {
             <Route path="exams/search" element={<Exams />} />
             <Route path="exams/create" element={<div>Create Exam</div>} />
             <Route path="exams/:examId" element={<div>Exam Detail</div>} />
-            <Route path="results" element={<div>Results</div>} />
+            <Route path="results" element={<Results />} />
             <Route path="results/:resultId" element={<div>Result Detail</div>} />
             <Route path="settings" element={<div>Settings</div>} />
             <Route path="users" element={<div>Users</div>} />
