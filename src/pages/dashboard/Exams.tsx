@@ -211,8 +211,11 @@ export default function Exams() {
                 <ExamCard
                   key={id}
                   {...cardProps}
+                  onDetails={() => navigate(PATHS.EXAM_DETAIL(id))}
                   onStart={() => navigate(PATHS.EXAM_TAKE(id))}
                   onEnterLobby={() => navigate(PATHS.EXAM_TAKE(id))}
+                  onViewResults={() => navigate(PATHS.RESULT_DETAIL(id))}
+                  onViewReport={() => navigate(PATHS.RESULT_DETAIL(id))}
                 />
               );
             })}
@@ -243,6 +246,7 @@ export default function Exams() {
                 title={card.title}
                 subtitle={card.subtitle}
                 footerText={card.footerText}
+                onClick={() => navigate(PATHS.EXAM_DETAIL(card.id))}
               />
             ))}
           </div>
