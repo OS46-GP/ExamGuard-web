@@ -9,13 +9,13 @@ type InstructorNotesCardProps = {
 export default function InstructorNotesCard({ note, author }: InstructorNotesCardProps) {
   return (
     <GlassCard className="p-6 space-y-4">
-      <div className="flex justify-between items-start gap-4">
-        <h3 className="font-heading text-2xl font-semibold text-on-surface">
+      <div className="flex flex-col sm:flex-row justify-between items-start gap-3">
+        <h3 className="font-heading text-xl sm:text-2xl font-semibold text-on-surface">
           Instructor Notes
         </h3>
         <Badge
           variant="outline"
-          className="shrink-0 font-mono text-[11px] uppercase tracking-wider text-primary bg-surface-container-highest border-0 rounded-full px-3 py-1"
+          className="font-mono text-[11px] uppercase tracking-wider text-primary bg-surface-container-highest border-0 rounded-full px-3 py-1"
         >
           {author}
         </Badge>
