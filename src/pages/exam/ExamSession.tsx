@@ -127,8 +127,8 @@ export default function ExamSession() {
             onSubmit={handleSubmit}
           />
 
-          <div className="px-4 md:px-12 py-8 flex justify-center">
-          <div className="w-full flex flex-col gap-8">
+          <div className="px-6 md:px-12 py-6 md:py-8 flex justify-center">
+          <div className="w-full flex flex-col gap-6 md:gap-8">
             <div className="flex items-start justify-between gap-4">
               <div className="flex-1 min-w-0">
                 <QuestionHeader
@@ -147,11 +147,11 @@ export default function ExamSession() {
               </button>
             </div>
 
-            <div className="space-y-6">
-              <h2 className="font-heading text-h2 text-on-surface">
+            <div className="space-y-4 md:space-y-6">
+              <h2 className="font-heading text-xl md:text-h2 text-on-surface">
                 {mockQuestion.title}
               </h2>
-              <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+              <p className="text-body-sm md:text-body-lg text-on-surface-variant leading-relaxed">
                 {mockQuestion.context}
               </p>
             </div>

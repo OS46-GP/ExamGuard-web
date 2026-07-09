@@ -26,16 +26,16 @@ export default function QuestionHeader({
   const Icon = diff.icon;
 
   return (
-    <div className={cn("flex justify-between items-center", className)}>
-      <div className="flex items-center gap-3">
-        <span className="bg-secondary-container text-on-secondary-container font-mono text-[12px] px-3 py-1 rounded">
+    <div className={cn("flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2", className)}>
+      <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+        <span className="bg-secondary-container text-on-secondary-container font-mono text-[10px] sm:text-[12px] px-2 sm:px-3 py-1 rounded">
           QUESTION {number.toString().padStart(2, "0")}
         </span>
-        <span className="text-on-surface-variant border border-outline-variant px-3 py-1 rounded font-mono text-[12px]">
+        <span className="text-on-surface-variant border border-outline-variant px-2 sm:px-3 py-1 rounded font-mono text-[10px] sm:text-[12px]">
           {points} POINTS
         </span>
       </div>
-      <span className={cn("flex items-center gap-1 font-mono text-[12px]", diff.color)}>
+      <span className={cn("flex items-center gap-1 font-mono text-[10px] sm:text-[12px]", diff.color)}>
         <Icon size={14} />
         {diff.text}
       </span>
