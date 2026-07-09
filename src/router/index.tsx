@@ -17,6 +17,8 @@ import Dashboard from "@/pages/dashboard/Dashboard";
 import Exams from "@/pages/dashboard/Exams";
 import Results from "@/pages/dashboard/Results";
 
+import ExamLobby from "@/pages/exam/ExamLobby";
+import ExamDetail from "@/pages/exam/ExamDetail";
 import NotFound from "@/pages/NotFound";
 
 const AppRouter = () => {
@@ -41,9 +43,12 @@ const AppRouter = () => {
             <Route path="exams" element={<Exams />} />
             <Route path="exams/search" element={<Exams />} />
             <Route path="exams/create" element={<div>Create Exam</div>} />
-            <Route path="exams/:examId" element={<div>Exam Detail</div>} />
+            <Route path="exams/:examId" element={<ExamDetail />} />
             <Route path="results" element={<Results />} />
-            <Route path="results/:resultId" element={<div>Result Detail</div>} />
+            <Route
+              path="results/:resultId"
+              element={<div>Result Detail</div>}
+            />
             <Route path="settings" element={<div>Settings</div>} />
             <Route path="users" element={<div>Users</div>} />
           </Route>
@@ -52,7 +57,7 @@ const AppRouter = () => {
         {/* ── Protected: Exam Session (student only) ── */}
         <Route element={<ProtectedRoute allowedRoles={["student"]} />}>
           <Route element={<ExamLayout />}>
-            <Route path="/exams/:examId/take" element={<div>Take Exam</div>} />
+            <Route path="/exams/:examId/take" element={<ExamLobby />} />
           </Route>
         </Route>
 
