@@ -27,7 +27,12 @@ const navItemsByRole: Record<Role, NavItem[]> = {
   teacher: [
     { label: "Dashboard", icon: LayoutDashboard, path: PATHS.DASHBOARD },
     { label: "My Exams", icon: ClipboardList, path: PATHS.EXAMS },
-    { label: "Create Exam", icon: FilePlus, path: PATHS.EXAM_CREATE },
+    {
+      label: "Create Exam",
+      icon: FilePlus,
+      path: PATHS.EXAM_CREATE,
+      matchSubPaths: true,
+    },
     { label: "Results", icon: BarChart3, path: PATHS.RESULTS },
     { label: "Settings", icon: Settings, path: PATHS.SETTINGS },
   ],
@@ -60,7 +65,9 @@ export default function DashboardLayout() {
   const role = mockUser.role;
   const navItems = navItemsByRole[role];
   const portalLabel = portalLabelByRole[role];
-  const title = pageTitles[pathname] ?? "Dashboard";
+  const title =
+    pageTitles[pathname] ??
+    (pathname.startsWith(PATHS.EXAM_CREATE) ? "Create Exam" : "Dashboard");
 
   return (
     <div className="min-h-screen bg-background text-on-surface">
@@ -77,7 +84,7 @@ export default function DashboardLayout() {
         onClose={() => setDrawerOpen(false)}
         navItems={navItems}
       />
-      <main className="lg:ml-60 pt-24 pb-12 px-6">
+      <main className="lg:ml-60 pt-20 pb-8 px-6">
         <Outlet />
       </main>
     </div>

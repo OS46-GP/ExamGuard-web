@@ -10,6 +10,6 @@ export type MockUser = {
 export const mockUser: MockUser = {
   name: "Alex Rivera",
   id: "240912-ST",
-  role: "student",
+  role: "teacher",
   email: "alex@example.com",
 };
