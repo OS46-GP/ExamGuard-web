@@ -8,6 +8,7 @@ export type NavItem = {
   label: string;
   icon: LucideIcon;
   path: string;
+  matchSubPaths?: boolean;
 };
 
 type SidebarProps = {
@@ -36,7 +37,10 @@ export default function Sidebar({ navItems, portalLabel }: SidebarProps) {
 
       <nav className="flex flex-1 flex-col gap-2">
         {navItems.map((item) => {
-          const isActive = pathname === item.path;
+          const isActive =
+            pathname === item.path ||
+            (item.matchSubPaths &&
+              pathname.startsWith(item.path + "/"));
           return (
             <Link
               key={item.path}
