@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import { Sparkles, Shield } from "lucide-react";
 import EmptyQuestionsState from "@/components/exam/builder/EmptyQuestionsState";
 import QuestionList from "@/components/exam/builder/QuestionList";
@@ -44,10 +45,15 @@ const sampleQuestions: QuestionData[] = [
 ];
 
 export default function ExamQuestions() {
+  const navigate = useNavigate();
   const [hasQuestions] = useState(true);
 
   function handleAddQuestion() {
-    console.log("Add question");
+    navigate("new", { relative: "route" });
+  }
+
+  function handleEditQuestion() {
+    navigate("new", { relative: "route" });
   }
 
   function handleGenerateAI() {
@@ -62,6 +68,7 @@ export default function ExamQuestions() {
             <QuestionList
               questions={sampleQuestions}
               onAddQuestion={handleAddQuestion}
+              onEditQuestion={handleEditQuestion}
             />
           </div>
           <aside className="lg:col-span-3 space-y-6">

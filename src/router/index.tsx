@@ -20,6 +20,7 @@ import ExamBasicInfo from "@/pages/dashboard/create/ExamBasicInfo";
 import ExamQuestions from "@/pages/dashboard/create/ExamQuestions";
 import ExamSettings from "@/pages/dashboard/create/ExamSettings";
 import ExamPreview from "@/pages/dashboard/create/ExamPreview";
+import ExamCreateQuestion from "@/pages/dashboard/create/ExamCreateQuestion";
 import Results from "@/pages/dashboard/Results";
 
 import ExamLobby from "@/pages/exam/ExamLobby";
@@ -52,6 +53,7 @@ const AppRouter = () => {
             <Route path="exams/create" element={<ExamCreate />}>
               <Route index element={<ExamBasicInfo />} />
               <Route path="questions" element={<ExamQuestions />} />
+              <Route path="questions/new" element={<ExamCreateQuestion />} />
               <Route path="settings" element={<ExamSettings />} />
               <Route path="preview" element={<ExamPreview />} />
             </Route>

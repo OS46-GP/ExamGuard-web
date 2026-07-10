@@ -38,8 +38,11 @@ export default function ExamCreate() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
 
-  const currentSegment = pathname.split("/").pop() ?? "";
-  const activeTab = routeToLabel[currentSegment] ?? "Basic Information";
+  const segments = pathname.split("/").filter(Boolean);
+  const createIdx = segments.findIndex((s) => s === "create");
+  const relevantSegments = segments.slice(createIdx + 1);
+  const knownRoute = relevantSegments.find((s) => routeToLabel[s]);
+  const activeTab = knownRoute ? routeToLabel[knownRoute] : "Basic Information";
 
   const primaryAction: BuilderAction = {
     label: "Save",
